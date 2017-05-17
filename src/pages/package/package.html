@@ -11,14 +11,13 @@
 
 </ion-header>
 <ion-content padding>
-  </ion-list>
-  <ion-item *ngFor="let package of packages; let i=index">
-    <ion-avatar item-left>
-      <img src="img/avatar-finn.png">
-    </ion-avatar>
-    <h2>{{package}}</h2>
-    <h3>Don't Know What To Do!</h3>
-    <p>I've had a pretty messed up day. If we just...</p>
+  <ion-list>
+  <ion-item>
+    <h2 margin-top margin-bottom>{{package?.status.title}}</h2>
+    <p>{{package?.id}}</p>
+    <p>{{package?.sender}}</p>
+    <p>{{package?.receiver}}</p>
+    <button ion-button clear item-right>View</button>
   </ion-item>
 </ion-list>
 </ion-content>

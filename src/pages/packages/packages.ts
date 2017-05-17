@@ -15,7 +15,7 @@ import { Http ,Response } from "@angular/http";
 })
 export class PackagesPage {
 
-  public dataInput:any;
+  public allPackages:any;
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
@@ -24,9 +24,9 @@ export class PackagesPage {
   }
 
   ionViewDidLoad() {
-    this.http.get('http://www.tp-garden.com/test_json').subscribe((response: Response)=>{
-      this.dataInput=response.json();
-      // console.log(response);
+    this.http.get('http://www.tp-garden.com/api/package').subscribe((response: Response)=>{
+      this.allPackages=response.json();
+      console.log(this.allPackages);
     });
   }
 
