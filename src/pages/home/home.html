@@ -1,10 +1,13 @@
 
-<ion-content padding>
-  <div text-center padding>
+<ion-content padding-top padding>
+  <div class="logo" text-center padding>
     <img src="assets/images/logo3.svg">
   </div>
-<ion-list>
-
+  <ion-item no-lines>
+    <p class="logo-title" text-center>Monster Bike</p>
+  </ion-item>
+<ion-list padding>
+  <div></div>
   <ion-item>
     <ion-label floating>Username</ion-label>
     <ion-input type="text"></ion-input>
@@ -14,12 +17,13 @@
     <ion-label floating>Password</ion-label>
     <ion-input type="password"></ion-input>
   </ion-item>
-
 </ion-list>
-  <button [navPush]="packagePage" ion-button block >
+
+<button ion-button block >
     เข้าสู่ระบบ
   </button>
-    <button ion-button clear>
-      สมัครสมาชิก
-    </button>
+
+<ion-item no-lines>
+   <button item-right ion-button clear>สมัครสมาชิก</button>
+</ion-item>
 </ion-content>

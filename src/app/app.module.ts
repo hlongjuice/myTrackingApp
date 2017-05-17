@@ -5,31 +5,35 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { HttpModule,Http } from '@angular/http';
 import { MyApp } from './app.component';
-import { PackagePage } from '../pages/package/package';
 import { HomePage } from '../pages/home/home';
 import { PackagesPage } from "../pages/packages/packages";
 import { TabsPage } from "../pages/tabs/tabs";
+import { PackageDetailsPage } from "../pages/package-details/package-details";
+import {AgmCoreModule} from "angular2-google-maps/core";
 
 @NgModule({
   declarations: [
     MyApp,
-    PackagePage,
     PackagesPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    PackageDetailsPage
   ],
   imports: [
     BrowserModule,
     HttpModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+      AgmCoreModule.forRoot({
+      apiKey:'AIzaSyB_ri9p-CIkMHARWPnhD939z_-5SjV1Ew4'
+    }),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    PackagePage,
     PackagesPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    PackageDetailsPage
   ],
   providers: [
     StatusBar,

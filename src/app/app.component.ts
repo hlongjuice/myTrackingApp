@@ -2,7 +2,6 @@ import { Component ,ViewChild} from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { PackagePage } from '../pages/package/package';
 import { Http} from '@angular/http';
 import { HomePage } from "../pages/home/home";
 
@@ -17,7 +16,6 @@ import { PackagesPage } from "../pages/packages/packages";
 export class MyApp {
   tabsPage = TabsPage;
   packagesPage=PackagesPage;
-  packagePage=PackagePage;
   @ViewChild('nav') nav: NavController;
 
   constructor(

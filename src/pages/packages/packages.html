@@ -2,24 +2,36 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-buttons end>
+    <ion-buttons start>
       <button ion-button menuToggle>
         <ion-icon name="menu"></ion-icon>
       </button>
     </ion-buttons>
-    <ion-title>Pacakges</ion-title>
+    <ion-title color="primary">Pacakges</ion-title>
   </ion-navbar>
 
 </ion-header>
-<ion-content padding>
-<ion-list>
-  <ion-item *ngFor="let package of allPackages">
-     <h2 margin-top margin-bottom>{{package?.status.title}}</h2>
-    <p>{{package?.id}}</p>
-    <p>{{package?.sender}}</p>
-    <p>{{package?.receiver}}</p>
-    <button ion-button clear item-right>View</button>
-  </ion-item>
-
-</ion-list>
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      <ion-list *ngFor="let package of allPackages" margin-bottom>
+          <ion-item-divider [color]="package?.status.color">
+            <ion-icon name="send" item-left></ion-icon>
+            สถานะ: {{package?.status.title}}
+            </ion-item-divider>
+          <ion-item >
+            รหัสสินค้า : {{package?.id}}
+            </ion-item>
+          <ion-item >
+            <ion-icon name="contact" item-left></ion-icon>
+            ผู้ส่ง : {{package?.sender}}
+            <button (click)="onViewPackage(package)" ion-button clear item-right>View</button>
+            </ion-item>
+          <ion-item >
+            <ion-icon name="contact" item-left></ion-icon>
+            ผู้รับ : {{package?.receiver}}
+          </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

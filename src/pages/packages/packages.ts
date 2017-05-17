@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { Http ,Response } from "@angular/http";
+import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
+import { Http, Response } from "@angular/http";
+import { PackageDetailsPage } from "../package-details/package-details";
 
 /**
  * Generated class for the PackagesPage page.
@@ -19,7 +20,8 @@ export class PackagesPage {
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
-    private http:Http
+    private http:Http,
+    private modalCtrl:ModalController
     ) {
   }
 
@@ -28,6 +30,11 @@ export class PackagesPage {
       this.allPackages=response.json();
       console.log(this.allPackages);
     });
+  }
+
+  onViewPackage(myPackage : any){
+    const modal = this.modalCtrl.create(PackageDetailsPage,myPackage);
+    modal.present();
   }
 
 }

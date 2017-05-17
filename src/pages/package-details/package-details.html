@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-navbar >
+    <ion-title>ลายละเอียด</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card>
+    <!--Google Map-->
+    <ion-row>
+      <ion-col >
+        <sebm-google-map
+          [latitude]="9.1341216"
+          [longitude]="99.33001360000003"
+          [zoom]="12"
+        >
+        </sebm-google-map>
+      </ion-col>
+    </ion-row>
+    <ion-card-content padding>
+      <ion-card-title color="primary">
+        ลายละเอียด
+      </ion-card-title>
+      <!--Start-->
+      <ion-list >
+        <ion-item>
+          <ion-icon color="danger" name="pin" item-left></ion-icon>
+          <ion-label>
+            จุดรับสินค้า : {{packageDetails?.sender_address}}
+            </ion-label>
+        </ion-item>
+      </ion-list>
+
+      <!--End-->
+      <ion-list >
+        <ion-item>
+          <ion-icon color="success" name="home" item-left></ion-icon>
+          <ion-label>
+            จุดส่งสินค้า : {{packageDetails?.receiver_address}}
+            </ion-label>
+        </ion-item>
+      </ion-list>
+      <!--Sender-->
+      <ion-list >
+        <ion-item>
+          <ion-icon color="danger" name="contact" item-left></ion-icon>
+          <ion-label>
+            ผู้ส่ง : {{packageDetails?.sender}}
+            </ion-label>
+        </ion-item>
+      </ion-list>
+
+      <!--Receiver-->
+        <ion-list >
+        <ion-item>
+          <ion-icon color="success" name="contact" item-left></ion-icon>
+          <ion-label>
+            ผู้รับ : {{packageDetails?.sender}}
+            </ion-label>
+        </ion-item>
+      </ion-list>
+      <ion-item>
+         <button (click)="onClose()" ion-button block small color="danger" >ย้อนกลับ</button>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
