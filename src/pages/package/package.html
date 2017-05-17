@@ -1,7 +1,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-buttons start>
+    <ion-buttons end>
       <button ion-button menuToggle>
         <ion-icon name="menu"></ion-icon>
       </button>
@@ -11,10 +11,14 @@
 
 </ion-header>
 <ion-content padding>
-  {{package}}
+  </ion-list>
+  <ion-item *ngFor="let package of packages; let i=index">
+    <ion-avatar item-left>
+      <img src="img/avatar-finn.png">
+    </ion-avatar>
+    <h2>{{package}}</h2>
+    <h3>Don't Know What To Do!</h3>
+    <p>I've had a pretty messed up day. If we just...</p>
+  </ion-item>
+</ion-list>
 </ion-content>
-
-<ion-tabs>
-  <ion-tab [root]="homePage" tabTitle="Home" tabIcon="home"></ion-tab>
-  <ion-tab [root]="packagesPage" tabTitle="Packages" tabIcon="book"></ion-tab>
-</ion-tabs>
