@@ -11,7 +11,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 @IonicPage()
 @Component({
   selector: 'page-package',
-  templateUrl: 'package.html',
+  templateUrl: 'package.html'
 })
 export class PackagePage {
 public package : any
